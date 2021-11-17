@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: '"Lorem ipsum dolor sit amet, '
-image: http://juniorcouncil.org/wp-content/uploads/2021/11/January-22nd2022-2-8.08.55-PM.png
+image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
