@@ -101,7 +101,6 @@ function SocialMediaRow() {
       style={{
         display: "flex",
         justifyContent: "spaceBetween",
-        backgroundColor: "blue",
       }}
     >
       <div>
