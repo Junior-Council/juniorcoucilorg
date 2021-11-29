@@ -5,8 +5,10 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
+import FeaturesRow from "../components/FeaturesRow";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
+import Header from "../components/Header";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -29,23 +31,8 @@ export const IndexPageTemplate = ({
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="content">
-                  <div className="content">
-                    <div className="tile">
-                      <h1 className="title">{mainpitch.title}</h1>
-                    </div>
-                    <div className="tile">
-                      <h3 className="subtitle">{mainpitch.description}</h3>
-                    </div>
-                  </div>
-                  <div className="columns">
-                    <div className="column is-12">
-                      <h3 className="has-text-weight-semibold is-size-2">
-                        {heading}
-                      </h3>
-                      <p>{description}</p>
-                    </div>
-                  </div>
                   <Features gridItems={intro.blurbs} />
+                  <FeaturesRow gridItems={intro.blurbs}/>
                   <div className="columns">
                     <div className="column is-12 has-text-centered">
                       <Link className="btn" to="/products">
@@ -139,6 +126,7 @@ export const pageQuery = graphql`
               }
             }
             text
+            title
           }
           heading
           description
