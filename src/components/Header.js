@@ -13,7 +13,10 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { getImage } from "gatsby-plugin-image";
-
+import facebook from "../img/social/facebook.svg";
+import instagram from "../img/social/instagram.svg";
+import twitter from "../img/social/twitter.svg";
+import vimeo from "../img/social/vimeo.svg";
 
 const pages = ["About Us", "Donate", "Events", "Membership", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -37,64 +40,32 @@ export default function Header() {
     setAnchorElUser(null);
   };
 
-  //const iconImage = getImage(image) || image;
-
   return (
-    <AppBar position="static" style={{ background: '#FFFFFF' }}>
+    <AppBar position="static" style={{ background: "#FFFFFF" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        
-        <Avatar alt="logo" src="../img/jcsmall.png" />
-
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu} style={{backgroundColor: "black"}}>
-                  <Typography textAlign="center" style={{color: "black"}}>{page}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }, justifyContent: "center" }}>
+          <Avatar alt="logo" src="../img/jcsmall.png" />
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "center",
+            }}
+          >
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
-                style={{color: "black"}}
+                onClick={handleOpenNavMenu}
+                style={{ color: "black" }}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
             ))}
-          </Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-              </IconButton>
-            </Tooltip>
             <Menu
               sx={{ mt: "45px" }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
+              id="menu--links"
+              anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "top",
                 horizontal: "right",
@@ -104,8 +75,8 @@ export default function Header() {
                 vertical: "top",
                 horizontal: "right",
               }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseNavMenu}>
@@ -114,8 +85,52 @@ export default function Header() {
               ))}
             </Menu>
           </Box>
+
+          <Box sx={{ flexGrow: 0 }}>
+            <SocialMediaRow />
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>
+  );
+}
+
+function SocialMediaRow() {
+  return (
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "spaceBetween",
+        backgroundColor: "blue",
+      }}
+    >
+      <div>
+        <a title="facebook" href="https://facebook.com">
+          <img
+            src={facebook}
+            alt="Facebook"
+            style={{ width: "2em", height: "2em" }}
+          />
+        </a>
+      </div>
+      <div>
+        <a title="instagram" href="https://instagram.com">
+          <img
+            src={instagram}
+            alt="Instagram"
+            style={{ width: "2em", height: "2em" }}
+          />
+        </a>
+      </div>
+      <div>
+        <a title="vimeo" href="https://vimeo.com">
+          <img
+            src={vimeo}
+            alt="Vimeo"
+            style={{ width: "2em", height: "2em" }}
+          />
+        </a>
+      </div>
+    </div>
   );
 }
