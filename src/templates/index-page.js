@@ -8,7 +8,8 @@ import Features from "../components/Features";
 import FeaturesRow from "../components/FeaturesRow";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
-import Header from "../components/Header";
+import Hero from "../components/Hero/Hero";
+import ProductRow from "../components/ProductRow";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -24,15 +25,14 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      <Hero/>
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="content">
-                  <Features gridItems={intro.blurbs} />
-                  <FeaturesRow gridItems={intro.blurbs}/>
+                  <ProductRow />
                   <div className="columns">
                     <div className="column is-12 has-text-centered">
                       <Link className="btn" to="/products">
