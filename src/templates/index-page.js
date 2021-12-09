@@ -5,7 +5,6 @@ import { getImage } from "gatsby-plugin-image";
 
 import Layout from "../components/Layout";
 import Features from "../components/Features";
-import FeaturesRow from "../components/FeaturesRow";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import Hero from "../components/Hero/Hero";
@@ -32,7 +31,7 @@ export const IndexPageTemplate = ({
             <div className="columns">
               <div className="column is-10 is-offset-1">
                 <div className="content">
-                  <ProductRow />
+                  <Features gridItems={intro.blurbs} />
                   <div className="columns">
                     <div className="column is-12 has-text-centered">
                       <Link className="btn" to="/products">
@@ -45,11 +44,6 @@ export const IndexPageTemplate = ({
                       Latest stories
                     </h3>
                     <BlogRoll />
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/blog">
-                        Read more
-                      </Link>
-                    </div>
                   </div>
                 </div>
               </div>
