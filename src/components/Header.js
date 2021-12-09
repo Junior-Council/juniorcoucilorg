@@ -17,9 +17,10 @@ import facebook from "../img/social/facebook.svg";
 import instagram from "../img/social/instagram.svg";
 import twitter from "../img/social/twitter.svg";
 import vimeo from "../img/social/vimeo.svg";
+import Stack from '@mui/material/Stack';
 
 const pages = ["About Us", "Donate", "Events", "Membership", "Contact"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["About Us", "Donate", "Events", "Membership", "Contact"];
 
 export default function Header() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -44,12 +45,36 @@ export default function Header() {
     <AppBar position="static" style={{ background: "#FFFFFF" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Avatar alt="logo" src="../img/jcsmall.png" />
           <Box
             sx={{
               flexGrow: 1,
               display: { xs: "none", md: "flex" },
-              justifyContent: "center",
+            }}
+          >
+            <Avatar alt="logo" src="../img/jcsmall.png" />
+          </Box>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="primary"
+            >
+              <MenuIcon />
+            </IconButton>
+          </Box>
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
             }}
           >
             {pages.map((page) => (
@@ -85,8 +110,16 @@ export default function Header() {
               ))}
             </Menu>
           </Box>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+            }}
+          >
+            <Avatar alt="logo" src="../img/jcsmall.png" />
+          </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
             <SocialMediaRow />
           </Box>
         </Toolbar>
@@ -97,12 +130,7 @@ export default function Header() {
 
 function SocialMediaRow() {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "spaceBetween",
-      }}
-    >
+    <Stack direction="row" alignItems="center" spacing={1}>
       <div>
         <a title="facebook" href="https://facebook.com">
           <img
@@ -130,6 +158,6 @@ function SocialMediaRow() {
           />
         </a>
       </div>
-    </div>
+    </Stack>
   );
 }

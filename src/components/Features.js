@@ -1,27 +1,37 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import PreviewCompatibleImage from "../components/PreviewCompatibleImage";
+import { Link, graphql } from "gatsby";
 
 const FeatureGrid = ({ gridItems }) => (
-  <div className="columns">
+  <div className="columns is-multiline">
     {gridItems.map((item) => (
-      <div key={item.text} className="column is-3">
+      <div key={item.text} className="column is-6">
         <section className="section">
           <div className="has-text-centered">
-           <div className="row">
-                <h3 style={{float: 'left'}}>{item.title}</h3> 
-           </div>
             <div
               style={{
                 width: "240px",
                 display: "inline-block",
-                paddingBottom: "20px",
               }}
             >
               <PreviewCompatibleImage imageInfo={item} />
             </div>
           </div>
-          <p>{item.text}</p>
+          <div
+            style={{
+              paddingTop: "20px",
+            }}
+          >
+            {" "}
+            <p>{item.text}</p>
+          </div>
+
+          <div className="column is-12 has-text-centered">
+            <Link className="btn" to="/blog">
+              Read more
+            </Link>
+          </div>
         </section>
       </div>
     ))}
@@ -31,7 +41,6 @@ const FeatureGrid = ({ gridItems }) => (
 FeatureGrid.propTypes = {
   gridItems: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string,
       image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
       text: PropTypes.string,
     })
