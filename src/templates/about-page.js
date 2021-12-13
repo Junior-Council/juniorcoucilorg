@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
+import Main from "../layouts/Main"
 import Content, { HTMLContent } from "../components/Content";
 
 // eslint-disable-next-line
@@ -9,7 +10,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent }) => {
   const PageContent = contentComponent || Content;
 
   return (
-    <section className="section section--gradient">
+    <section>
       <div className="container">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -36,13 +37,13 @@ const AboutPage = ({ data }) => {
   const { markdownRemark: post } = data;
 
   return (
-    <Layout>
+    <Main>
       <AboutPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         content={post.html}
       />
-    </Layout>
+    </Main>
   );
 };
 

@@ -11,7 +11,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 
 import Container from '../../components/Container';
 
-const SimpleHeroWithSearchBox = () => {
+const SimpleHeroWithSearchBox = ({heroImage, heroTitle, heroSubtitle}) => {
   const theme = useTheme();
 
   return (
@@ -48,7 +48,7 @@ const SimpleHeroWithSearchBox = () => {
                 color: 'common.white',
               }}
             >
-              Need help selecting a rental service provider?
+              {heroTitle}
             </Typography>
             <Typography
               variant="h6"
@@ -59,7 +59,7 @@ const SimpleHeroWithSearchBox = () => {
                 color: 'common.white',
               }}
             >
-              Let us guide you home.
+              {heroSubtitle}
             </Typography>
           </Box>
         </Box>
