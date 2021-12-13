@@ -8,38 +8,16 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material';
 import Typography from '@mui/material/Typography';
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 
 import Container from '../../components/Container';
 
-const mock = [
-  {
-    title: 'Coworking communities',
-    subtitle:
-      'Connect in spaces designed to bring incredible people together. Learn with them and take your project to new heights.',
-  },
-  {
-    title: 'Flexible contracts',
-    subtitle:
-      'Stay as little as 3 months with rolling contracts. Like it here? This is your space, so stay as long as you want.',
-  },
-  {
-    title: 'All inclusive',
-    subtitle:
-      'Monthly fee covers everything you need hassle free. Keep cool and focus on what matters to you.',
-  },
-  {
-    title: 'Hospitality service',
-    subtitle:
-      '24/7 support. No more hidden prices. It is your workingplace, playground, relax room.',
-  },
-];
-
-const FeaturesWithLearnMoreLink  = () => {
+const FeaturesWithLearnMoreLink  = ({gridItems}) => {
   return (
     <Container>
       <Grid container spacing={4}>
-        {mock.map((item, i) => (
+        {gridItems.map((item, i) => (
           <Grid
             key={i}
             item
@@ -48,7 +26,7 @@ const FeaturesWithLearnMoreLink  = () => {
             sx={{ display: 'flex', flexDirection: 'column' }}
           >
             <Box sx={{display: 'flex', justifyContent: "center", marginBottom: 2}}>
-              <img src='https://via.placeholder.com/200'></img>
+              <GatsbyImage image={getImage(item.image)} />
             </Box>
             <ListItemText
               primary={item.title}
@@ -93,30 +71,5 @@ const FeaturesWithLearnMoreLink  = () => {
     </Container>
   );
 };
-
-
-function ActionAreaCard() {
-  return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
-  );
-}
 
 export default FeaturesWithLearnMoreLink;

@@ -26,14 +26,14 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <SimpleHeroWithSearchBox />
+      <SimpleHeroWithSearchBox heroImage={heroImage} heroTitle={title} heroSubtitle={subheading} />
       <section>
         <div>
           <div className="section">
             <div className="columns">
               <div>
                 <div>
-                  <FeaturesWithLearnMoreLink />
+                  <FeaturesWithLearnMoreLink gridItems={intro.blurbs} />
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
                       Latest stories
@@ -114,7 +114,7 @@ export const pageQuery = graphql`
                 gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
               }
             }
-            text
+            subtitle
             title
           }
           heading
