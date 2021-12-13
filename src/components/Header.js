@@ -17,7 +17,7 @@ import facebook from "../img/social/facebook.svg";
 import instagram from "../img/social/instagram.svg";
 import twitter from "../img/social/twitter.svg";
 import vimeo from "../img/social/vimeo.svg";
-import Stack from '@mui/material/Stack';
+import Stack from "@mui/material/Stack";
 
 const pages = ["About Us", "Donate", "Events", "Membership", "Contact"];
 const settings = ["About Us", "Donate", "Events", "Membership", "Contact"];
@@ -45,83 +45,90 @@ export default function Header() {
     <AppBar position="static" style={{ background: "#FFFFFF" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-            }}
+          <Stack
+            sx={{flexGrow: 1,}}
+            direction={{ xs: "row"}}
+            justifyContent="spaceBetween"
+            alignItems="center"
           >
-            <Avatar alt="logo" src="../img/jcsmall.png" />
-          </Box>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="primary"
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+              }}
             >
-              <MenuIcon />
-            </IconButton>
-          </Box>
-
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "none", md: "flex" },
-            }}
-          >
-            {pages.map((page) => (
-              <Button
-                key={page}
+              <Avatar alt="logo" src="../img/jcsmall.png" />
+            </Box>
+            <Box
+              sx={{
+                display: { xs: "flex", md: "none" },
+              }}
+            >
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
                 onClick={handleOpenNavMenu}
-                style={{ color: "black" }}
-                sx={{ my: 2, color: "white", display: "block" }}
+                color="primary"
               >
-                {page}
-              </Button>
-            ))}
-            <Menu
-              sx={{ mt: "45px" }}
-              id="menu--links"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-          <Box
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none" },
-            }}
-          >
-            <Avatar alt="logo" src="../img/jcsmall.png" />
-          </Box>
+                <MenuIcon />
+              </IconButton>
+            </Box>
 
-          <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
-            <SocialMediaRow />
-          </Box>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", md: "flex" },
+              }}
+            >
+              {pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleOpenNavMenu}
+                  style={{ color: "black" }}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              ))}
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu--links"
+                anchorEl={anchorElNav}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElNav)}
+                onClose={handleCloseNavMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+            <Box
+              sx={{
+                flexGrow: 1,
+                display: { xs: "flex", md: "none" },
+                justifyContent:"center"
+              }}
+            >
+              <Avatar alt="logo" src="../img/jcsmall.png" />
+            </Box>
+
+            <Box sx={{ flexGrow: 0, display: { xs: "none", md: "flex" } }}>
+              <SocialMediaRow />
+            </Box>
+          </Stack>
         </Toolbar>
       </Container>
     </AppBar>

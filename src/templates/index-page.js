@@ -7,8 +7,10 @@ import Layout from "../components/Layout";
 import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
-import Hero from "../components/Hero/Hero";
 import ProductRow from "../components/ProductRow";
+import Main from "../layouts/Main"
+import SimpleHeroWithSearchBox from "../components/SimpleHeroWithSearchBox";
+import FeaturesWithLearnMoreLink from "../components/FeaturesWithLearnMoreLink";
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -24,21 +26,14 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <Hero/>
-      <section className="section section--gradient">
-        <div className="container">
+      <SimpleHeroWithSearchBox />
+      <section>
+        <div>
           <div className="section">
             <div className="columns">
-              <div className="column is-10 is-offset-1">
-                <div className="content">
-                  <Features gridItems={intro.blurbs} />
-                  <div className="columns">
-                    <div className="column is-12 has-text-centered">
-                      <Link className="btn" to="/products">
-                        See all products
-                      </Link>
-                    </div>
-                  </div>
+              <div>
+                <div>
+                  <FeaturesWithLearnMoreLink />
                   <div className="column is-12">
                     <h3 className="has-text-weight-semibold is-size-2">
                       Latest stories
@@ -71,7 +66,7 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
 
   return (
-    <Layout>
+    <Main>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
@@ -81,7 +76,7 @@ const IndexPage = ({ data }) => {
         description={frontmatter.description}
         intro={frontmatter.intro}
       />
-    </Layout>
+    </Main>
   );
 };
 

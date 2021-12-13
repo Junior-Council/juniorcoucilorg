@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: '"Lorem ipsum dolor sit amet, '
+title: '"Junior Council, '
 image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
