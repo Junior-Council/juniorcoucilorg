@@ -47,6 +47,10 @@ intro:
         Email us or call the store for details.
       subtitle: Monthly fee covers everything you need hassle free. Keep cool and
         focus on what matters to you.
+    - title: Hospitality service
+      subtitle: 24/7 support. No more hidden prices. It is your workingplace,
+        playground, relax room.
+      image: https://via.placeholder.com/150
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
