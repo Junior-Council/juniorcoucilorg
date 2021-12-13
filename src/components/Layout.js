@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import "./all.sass";
 import useSiteMetadata from "./SiteMetadata";
 import { withPrefix } from "gatsby";
-import Header from "../components/Header";
+import TopNav from "../components/TopNav"
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();
@@ -12,7 +12,7 @@ const TemplateWrapper = ({ children }) => {
     <div>
       <Helmet>
         <html lang="en" />
-        <title>{title}</title>
+        <title>Junior Council</title>
         <meta name="description" content={description} />
 
         <link
@@ -48,9 +48,8 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix("/")}img/og-image.jpg`}
         />
       </Helmet>
-      <Header />
+      <TopNav />
       <div>{children}</div>
-      <Footer />
     </div>
   );
 };
