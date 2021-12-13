@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
-title: '"Junior Council, '
-image: /img/jumbotron.jpg
+title: Junior Council
+image: https://assets.maccarianagency.com/backgrounds/img3.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
 mainpitch:
@@ -21,6 +21,9 @@ intro:
       subtitle: >
         Connect in spaces designed to bring incredible people together. Learn with them and take your project to new heights.
       title: TEST TIELE
+      subtitle: >
+        Connect in spaces designed to bring incredible people together. Learn
+        with them and take your project to new heights.
     - title: Test
       image: /img/150.png
       subtitle: >
