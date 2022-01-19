@@ -13,6 +13,7 @@ import Container from '../../components/Container';
 
 const SimpleHeroWithSearchBox = ({heroImage, heroTitle, heroSubtitle}) => {
   const theme = useTheme();
+  console.log("hero image: ", heroImage)
 
   return (
     <Box
@@ -21,7 +22,7 @@ const SimpleHeroWithSearchBox = ({heroImage, heroTitle, heroSubtitle}) => {
       position={'relative'}
       sx={{
         background:
-          'url(https://assets.maccarianagency.com/backgrounds/img3.jpg) no-repeat center',
+          `url(${heroImage}) no-repeat center`,
         backgroundSize: 'cover',
       }}
     >

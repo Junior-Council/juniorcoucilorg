@@ -23,6 +23,7 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const heroImage = getImage(image) || image;
+  console.log("iiiiiiiiiii", image)
 
   return (
     <div>
@@ -64,6 +65,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
+  console.log("dd", data)
 
   return (
     <Main>
@@ -97,7 +99,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(placeholder: DOMINANT_COLOR)
           }
         }
         heading
@@ -111,7 +113,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
+                gatsbyImageData(layout: CONSTRAINED)
               }
             }
             subtitle

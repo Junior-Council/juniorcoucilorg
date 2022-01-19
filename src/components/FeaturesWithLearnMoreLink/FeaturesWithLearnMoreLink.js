@@ -26,7 +26,7 @@ const FeaturesWithLearnMoreLink  = ({gridItems}) => {
             sx={{ display: 'flex', flexDirection: 'column' }}
           >
             <Box sx={{display: 'flex', justifyContent: "center", marginBottom: 2}}>
-              <GatsbyImage image={getImage(item.image)} />
+              <GatsbyImage image={getImage(item.image)} alt=""/>
             </Box>
             <ListItemText
               primary={item.title}
