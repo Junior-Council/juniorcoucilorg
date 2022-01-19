@@ -22,6 +22,9 @@ intro:
         Connect in spaces designed to bring incredible people together. Learn
         with them and take your project to new heights.
       title: TEST TIELE
+      subtitle: >
+        Connect in spaces designed to bring incredible people together. Learn
+        with them and take your project to new heights.
     - title: Test
       image: /img/150.png
       subtitle: >
