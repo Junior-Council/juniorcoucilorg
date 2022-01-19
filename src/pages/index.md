@@ -1,9 +1,9 @@
 ---
 templateKey: index-page
-title: Junior Council
-image: https://assets.maccarianagency.com/backgrounds/img3.jpg
+title: Junior Councileeeee
+image: /img/products-grid2.jpg
 heading: Great coffee with a conscience
-subheading: Support sustainable farming while enjoying a cup
+subheading: Support sustainable farming while enjoying a cups
 mainpitch:
   title: Why Kaldi
   description: >
@@ -19,7 +19,8 @@ intro:
   blurbs:
     - image: /img/150.png
       subtitle: >
-        Connect in spaces designed to bring incredible people together. Learn with them and take your project to new heights.
+        Connect in spaces designed to bring incredible people together. Learn
+        with them and take your project to new heights.
       title: TEST TIELE
       subtitle: >
         Connect in spaces designed to bring incredible people together. Learn
@@ -27,15 +28,18 @@ intro:
     - title: Test
       image: /img/150.png
       subtitle: >
-        Connect in spaces designed to bring incredible people together. Learn with them and take your project to new heights.
+        Connect in spaces designed to bring incredible people together. Learn
+        with them and take your project to new heights.
     - title: Test
       image: /img/150.png
       subtitle: >
-        LConnect in spaces designed to bring incredible people together. Learn with them and take your project to new heights.
+        LConnect in spaces designed to bring incredible people together. Learn
+        with them and take your project to new heights.
     - title: Test
       image: /img/150.png
       subtitle: >
-        LConnect in spaces designed to bring incredible people together. Learn with them and take your project to new heights.
+        LConnect in spaces designed to bring incredible people together. Learn
+        with them and take your project to new heights.
   heading: What we offer
   description: >
     Kaldi is the ultimate spot for coffee lovers who want to learn about their
