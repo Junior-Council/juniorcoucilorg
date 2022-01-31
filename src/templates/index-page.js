@@ -99,7 +99,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(placeholder: DOMINANT_COLOR)
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         heading
@@ -113,10 +113,10 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
               }
             }
-            subtitle
+            text
             title
           }
           heading
