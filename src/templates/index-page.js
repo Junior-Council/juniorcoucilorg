@@ -9,7 +9,7 @@ import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import ProductRow from "../components/ProductRow";
 import Main from "../layouts/Main"
-import SimpleHeroWithSearchBox from "../components/SimpleHeroWithSearchBox";
+import SimpleHero from "../components/SimpleHero";
 import FeaturesWithLearnMoreLink from "../components/FeaturesWithLearnMoreLink";
 
 // eslint-disable-next-line
@@ -27,7 +27,7 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <SimpleHeroWithSearchBox heroImage={heroImage} heroTitle={title} heroSubtitle={subheading} />
+      <SimpleHero heroImage={heroImage} heroTitle={title} heroSubtitle={subheading} />
       <section>
         <div>
           <div className="section">
@@ -99,7 +99,7 @@ export const pageQuery = graphql`
         title
         image {
           childImageSharp {
-            gatsbyImageData(placeholder: DOMINANT_COLOR)
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
         }
         heading
@@ -113,10 +113,10 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                gatsbyImageData(layout: CONSTRAINED)
+                gatsbyImageData(width: 240, quality: 64, layout: CONSTRAINED)
               }
             }
-            subtitle
+            text
             title
           }
           heading

@@ -36,12 +36,21 @@ collections:
     label: "Events"
     folder: "src/pages/event"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     identifier_field: name
     fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "event-page",
+        }
       - {label: "Name", name: "name", widget: "string"}
-      - {label: "Publish Date", name: "date", widget: "datetime"}
-      - {label: "Featured Image", name: "thumbnail", widget: "image"}
+      - {label: "Event Date", name: "date", widget: "datetime"}
+      - {label: "Hero Image", name: "hero-image", widget: "image"}
+      - {label: "Featured Image", name: "feature-image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Gallery", name: "gallery", widget: "image"}
 
   - name: "pages"
     label: "Pages"
