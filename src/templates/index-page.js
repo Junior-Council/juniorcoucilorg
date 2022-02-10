@@ -9,7 +9,7 @@ import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import ProductRow from "../components/ProductRow";
 import Main from "../layouts/Main"
-import SimpleHeroWithSearchBox from "../components/SimpleHeroWithSearchBox";
+import SimpleHero from "../components/SimpleHero";
 import FeaturesWithLearnMoreLink from "../components/FeaturesWithLearnMoreLink";
 
 // eslint-disable-next-line
@@ -27,7 +27,7 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <SimpleHeroWithSearchBox heroImage={heroImage} heroTitle={title} heroSubtitle={subheading} />
+      <SimpleHero heroImage={heroImage} heroTitle={title} heroSubtitle={subheading} />
       <section>
         <div>
           <div className="section">

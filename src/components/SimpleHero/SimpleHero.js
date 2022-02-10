@@ -9,9 +9,9 @@ import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import InputAdornment from '@mui/material/InputAdornment';
 
-import Container from '../../components/Container';
+import Container from '../Container';
 
-const SimpleHeroWithSearchBox = ({heroImage, heroTitle, heroSubtitle}) => {
+const SimpleHero = ({heroImage, heroTitle, heroSubtitle}) => {
   const theme = useTheme();
   console.log("hero image: ", heroImage)
 
@@ -69,4 +69,4 @@ const SimpleHeroWithSearchBox = ({heroImage, heroTitle, heroSubtitle}) => {
   );
 };
 
-export default SimpleHeroWithSearchBox;
+export default SimpleHero;
