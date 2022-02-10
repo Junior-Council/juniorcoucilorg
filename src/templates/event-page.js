@@ -9,6 +9,7 @@ import { Link, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import PropTypes from "prop-types";
 import Main from "../layouts/Main";
+import EventCard from "../components/EventCard";
 
 export const EventPageTemplate = ({
   image,
@@ -49,7 +50,7 @@ const EventDescription = () => {
         <h1>xs=6 md=8</h1>
       </Grid>
       <Grid item xs={6} md={4} sx={{backgroundColor:"blue"}}>
-        <h1>xs=6 md=4</h1>
+        <EventCard/>
       </Grid>
     </Grid>
     </div>
