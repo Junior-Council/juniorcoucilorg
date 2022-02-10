@@ -36,7 +36,23 @@ const EventPage = ({ data }) => {
   return (
     <Main>
       <EventPageTemplate />
+      <EventDescription/>
     </Main>
+  );
+};
+
+const EventDescription = () => {
+  return (
+    <div className="section">
+    <Grid container spacing={2}>
+      <Grid item xs={6} md={8} sx={{backgroundColor:"orange"}}>
+        <h1>xs=6 md=8</h1>
+      </Grid>
+      <Grid item xs={6} md={4} sx={{backgroundColor:"blue"}}>
+        <h1>xs=6 md=4</h1>
+      </Grid>
+    </Grid>
+    </div>
   );
 };
 
