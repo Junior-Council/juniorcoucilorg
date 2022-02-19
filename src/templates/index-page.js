@@ -8,7 +8,7 @@ import Features from "../components/Features";
 import BlogRoll from "../components/BlogRoll";
 import FullWidthImage from "../components/FullWidthImage";
 import ProductRow from "../components/ProductRow";
-import Main from "../layouts/Main"
+import Main from "../layouts/Main";
 import SimpleHero from "../components/SimpleHero";
 import FeaturesWithLearnMoreLink from "../components/FeaturesWithLearnMoreLink";
 
@@ -23,11 +23,14 @@ export const IndexPageTemplate = ({
   intro,
 }) => {
   const heroImage = getImage(image) || image;
-  console.log("iiiiiiiiiii", image)
 
   return (
     <div>
-      <SimpleHero heroImage={heroImage} heroTitle={title} heroSubtitle={subheading} />
+      <SimpleHero
+        heroImage={heroImage}
+        heroTitle={title}
+        heroSubtitle={subheading}
+      />
       <section>
         <div>
           <div className="section">
@@ -65,7 +68,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("dd", data)
+  console.log("dd", data);
 
   return (
     <Main>

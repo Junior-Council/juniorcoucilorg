@@ -1,52 +1,45 @@
 /* eslint-disable react/no-unescaped-entities */
-import React from 'react';
-import { alpha, useTheme } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import InputAdornment from '@mui/material/InputAdornment';
+import React from "react";
+import { alpha, useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
-import Container from '../Container';
+import Container from "../Container";
 
-const SimpleHero = ({heroImage, heroTitle, heroSubtitle}) => {
+const SimpleHero = ({ heroImage, heroTitle, heroSubtitle }) => {
   const theme = useTheme();
-  console.log("hero image: ", heroImage)
 
   return (
     <Box
       minHeight={500}
-      height={'auto'}
-      position={'relative'}
+      height={"auto"}
+      position={"relative"}
       sx={{
-        background:
-          `url(${heroImage}) no-repeat center`,
-        backgroundSize: 'cover',
+        background: `url(${heroImage.src}) no-repeat center`,
+        backgroundSize: "cover",
       }}
     >
       <Box
         sx={{
-          position: 'absolute',
+          position: "absolute",
           top: 1,
           left: 0,
           right: 0,
           bottom: 0,
           width: 1,
           height: 1,
-          background: alpha(theme.palette.primary.dark, 0.6),
+          background: alpha(theme.palette.primary.dark, 0.3),
           zIndex: 1,
         }}
       />
-      <Container position={'relative'} zIndex={2}>
+      <Container position={"relative"} zIndex={2}>
         <Box>
           <Box marginTop={4}>
             <Typography
               variant="h3"
               sx={{
                 fontWeight: 900,
-                color: 'common.white',
+                color: "common.white",
               }}
             >
               {heroTitle}
@@ -57,7 +50,7 @@ const SimpleHero = ({heroImage, heroTitle, heroSubtitle}) => {
               color="text.primary"
               sx={{
                 fontWeight: 400,
-                color: 'common.white',
+                color: "common.white",
               }}
             >
               {heroSubtitle}
