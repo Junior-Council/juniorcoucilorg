@@ -46,12 +46,15 @@ collections:
           default: "event-page",
         }
       - {label: "Name", name: "name", widget: "string"}
+      - {label: "Subheading", name: "subheading", widget: "string"}
       - {label: "Event Date", name: "date", widget: "datetime"}
+      - {label: "StreetAddress", name: "street-address", widget: "string"}
+      - {label: "City", name: "city", widget: "string"}
+      - {label: "State", name: "state", widget: "string"}
       - {label: "Hero Image", name: "hero-image", widget: "image"}
       - {label: "Featured Image", name: "feature-image", widget: "image"}
       - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "Gallery", name: "gallery", widget: "image"}
-
+      - {label: "GalleryImages", name: "galleryImages", widget: "list", summary: '{{fields.image}}',  label_singular: "Image",  field: {label: Image, name: image, widget: image}}
   - name: "pages"
     label: "Pages"
     files:
