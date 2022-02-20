@@ -28,7 +28,7 @@ const SimpleHero = ({ heroImage, heroTitle, heroSubtitle }) => {
           bottom: 0,
           width: 1,
           height: 1,
-          background: alpha(theme.palette.primary.dark, 0.3),
+          background: alpha("#000000", 0.5),
           zIndex: 1,
         }}
       />

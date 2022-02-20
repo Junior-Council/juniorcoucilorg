@@ -17,13 +17,12 @@ export const IndexPageTemplate = ({
   image,
   title,
   heading,
+  heroImage,
   subheading,
   mainpitch,
   description,
   intro,
 }) => {
-  const heroImage = getImage(image) || image;
-
   return (
     <div>
       <SimpleHero
@@ -34,18 +33,8 @@ export const IndexPageTemplate = ({
       <section>
         <div>
           <div className="section">
-            <div className="columns">
-              <div>
-                <div>
-                  <FeaturesWithLearnMoreLink gridItems={intro.blurbs} />
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                  </div>
-                </div>
-              </div>
+            <div>
+              <FeaturesWithLearnMoreLink gridItems={intro.blurbs} />
             </div>
           </div>
         </div>
@@ -80,6 +69,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        heroImage={frontmatter.hero_image.childImageSharp.fluid}
       />
     </Main>
   );
@@ -103,6 +93,14 @@ export const pageQuery = graphql`
         image {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        hero_image {
+          childImageSharp {
+            gatsbyImageData
+            fluid {
+              src
+            }
           }
         }
         heading
