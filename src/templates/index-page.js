@@ -34,18 +34,8 @@ export const IndexPageTemplate = ({
       <section>
         <div>
           <div className="section">
-            <div className="columns">
-              <div>
-                <div>
-                  <FeaturesWithLearnMoreLink gridItems={intro.blurbs} />
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Latest stories
-                    </h3>
-                    <BlogRoll />
-                  </div>
-                </div>
-              </div>
+            <div>
+              <FeaturesWithLearnMoreLink gridItems={intro.blurbs} />
             </div>
           </div>
         </div>
