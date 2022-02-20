@@ -4,7 +4,10 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { alpha, useTheme } from "@mui/material/styles";
 import MenuIcon from "@mui/icons-material/Menu";
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import IconButton from "@mui/material/IconButton";
 
 import { NavItem } from "./components";
 
@@ -63,7 +66,7 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           />
         </Box>
         <Box marginLeft={4}>
-          <EventNavItems/>
+          <EventNavItems />
         </Box>
         <Box marginLeft={4}>
           <NavItem
@@ -74,14 +77,21 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           />
         </Box>
         <Box marginLeft={4}>
-        <NavItem
+          <NavItem
             title={"Contact"}
             id={"secondary-pages"}
             items={secondaryPages}
             colorInvert={colorInvert}
           />
         </Box>
-        <Box marginLeft={4}></Box>
+        <Box marginLeft={2}>
+          <IconButton href={"https://www.facebook.com/TheJuniorCouncil/"}>
+            <FacebookIcon color={"gray"} />
+          </IconButton>
+          <IconButton href={"https://www.instagram.com/junior_council/?hl=en"}>
+            <InstagramIcon />
+          </IconButton>
+        </Box>
       </Box>
       <Box sx={{ display: { xs: "block", md: "none" } }} alignItems={"center"}>
         <Button
@@ -102,50 +112,43 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
   );
 };
 
-function NavigationItem({data}) {
-  let pages = sortLinks(data.allMarkdownRemark.nodes)
-  return (
-    <NavItem
-      title={"Events"}
-      id={"blog-pages"}
-      items={pages}
-    />
-  );
+function NavigationItem({ data }) {
+  let pages = sortLinks(data.allMarkdownRemark.nodes);
+  return <NavItem title={"Events"} id={"blog-pages"} items={pages} />;
 }
 
 function EventNavItems(props) {
   return (
     <StaticQuery
-    query={graphql`
-    {
-      allMarkdownRemark(filter: {fields: {slug: {glob: "/event/*"}}}) {
-        nodes {
-          frontmatter {
-            name
-          }
-          fields {
-            slug
+      query={graphql`
+        {
+          allMarkdownRemark(
+            filter: { fields: { slug: { glob: "/event/*" } } }
+          ) {
+            nodes {
+              frontmatter {
+                name
+              }
+              fields {
+                slug
+              }
+            }
           }
         }
-      }
-    }
-  `}
+      `}
       render={(data) => <NavigationItem data={data} {...props} />}
     ></StaticQuery>
   );
 }
 
-
-function sortLinks(nodes){
-
+function sortLinks(nodes) {
   let sortedLinks = [];
   nodes.forEach((item) => {
-    let sortedItem = {title: item.frontmatter.name, href: item.fields.slug}
+    let sortedItem = { title: item.frontmatter.name, href: item.fields.slug };
     sortedLinks.push(sortedItem);
   });
 
-  return sortedLinks
-
+  return sortedLinks;
 }
 
 Topbar.propTypes = {

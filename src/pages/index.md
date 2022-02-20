@@ -1,6 +1,7 @@
 ---
 templateKey: index-page
 title: '"Lorem ipsum dolor sit amet, '
+hero-image: /img/products-grid2.jpg
 image: /img/jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
