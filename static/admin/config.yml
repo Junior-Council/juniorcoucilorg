@@ -45,16 +45,23 @@ collections:
           widget: "hidden",
           default: "event-page",
         }
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Subheading", name: "subheading", widget: "string"}
-      - {label: "Event Date", name: "date", widget: "datetime"}
-      - {label: "StreetAddress", name: "street-address", widget: "string"}
-      - {label: "City", name: "city", widget: "string"}
-      - {label: "State", name: "state", widget: "string"}
-      - {label: "Hero Image", name: "hero-image", widget: "image"}
-      - {label: "Featured Image", name: "feature-image", widget: "image"}
-      - {label: "Body", name: "body", widget: "markdown"}
-      - {label: "GalleryImages", name: "galleryImages", widget: "list", summary: '{{fields.image}}',  label_singular: "Image",  field: {label: Image, name: image, widget: image}}
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Subheading", name: "subheading", widget: "string" }
+      - { label: "Event Date", name: "date", widget: "datetime" }
+      - { label: "StreetAddress", name: "street-address", widget: "string" }
+      - { label: "City", name: "city", widget: "string" }
+      - { label: "State", name: "state", widget: "string" }
+      - { label: "Hero Image", name: "hero-image", widget: "image" }
+      - { label: "Featured Image", name: "feature-image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "GalleryImages",
+          name: "galleryImages",
+          widget: "list",
+          summary: "{{fields.image}}",
+          label_singular: "Image",
+          field: { label: Image, name: image, widget: image },
+        }
   - name: "pages"
     label: "Pages"
     files:
@@ -69,7 +76,7 @@ collections:
               default: "index-page",
             }
           - { label: Title, name: title, widget: string }
-          - {label: "Hero Image", name: "hero-image", widget: "image"}
+          - { label: "Hero Image", name: "hero-image", widget: "image" }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
           - { label: Subheading, name: subheading, widget: string }
@@ -136,6 +143,28 @@ collections:
             }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Body", name: "body", widget: "markdown" }
+      - file: "src/pages/membership/member-list.md"
+        label: "Member List Page"
+        name: "memberlist"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "member-list-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - {
+              label: "Members",
+              name: "members",
+              widget: "list",
+              fields:
+                [
+                  { label: Name, name: name, widget: string },
+                  { label: Image, name: image, widget: image },
+                ],
+            }
       - file: "src/pages/products/index.md"
         label: "Products Page"
         name: "products"
