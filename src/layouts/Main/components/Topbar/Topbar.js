@@ -8,6 +8,7 @@ import { StaticQuery, graphql } from "gatsby";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
 
 import { NavItem } from "./components";
 
@@ -18,9 +19,6 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
     landings: landingPages,
     secondary: secondaryPages,
     company: companyPages,
-    account: accountPages,
-    portfolio: portfolioPages,
-    blog: blogPages,
   } = pages;
 
   return (
@@ -77,12 +75,20 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           />
         </Box>
         <Box marginLeft={4}>
-          <NavItem
-            title={"Contact"}
-            id={"secondary-pages"}
-            items={secondaryPages}
-            colorInvert={colorInvert}
-          />
+          <Button
+            onClick={() => console.log("elmwlpdm")}
+            aria-label="Menu"
+            component={"a"}
+            href={"/contact"}
+            sx={{
+              textTransform: "none",
+              borderRadius: 2,
+              minWidth: "auto",
+              padding: 1,
+            }}
+          >
+            <Typography color={"text.primary"}>Contact</Typography>
+          </Button>
         </Box>
         <Box marginLeft={2}>
           <IconButton href={"https://www.facebook.com/TheJuniorCouncil/"}>
