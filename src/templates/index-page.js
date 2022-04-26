@@ -1,28 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
-
-import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
-import FullWidthImage from "../components/FullWidthImage";
-import ProductRow from "../components/ProductRow";
+import { graphql } from "gatsby";
 import Main from "../layouts/Main";
 import SimpleHero from "../components/SimpleHero";
 import FeaturesWithLearnMoreLink from "../components/FeaturesWithLearnMoreLink";
 
 // eslint-disable-next-line
-export const IndexPageTemplate = ({
-  image,
-  title,
-  heading,
-  heroImage,
-  subheading,
-  mainpitch,
-  description,
-  intro,
-}) => {
+export const IndexPageTemplate = ({ title, heroImage, subheading, intro }) => {
   return (
     <div>
       <SimpleHero

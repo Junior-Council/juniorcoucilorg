@@ -161,8 +161,50 @@ collections:
               widget: "list",
               fields:
                 [
-                  { label: Name, name: name, widget: string },
-                  { label: Image, name: image, widget: image },
+                  { label: FirstName, name: first-name, widget: string },
+                  { label: LastName, name: last-name, widget: string },
+                  {
+                    label: position,
+                    name: position,
+                    widget: string,
+                    required: false,
+                  },
+                  { label: Image, name: image, widget: image, required: false },
+                ],
+            }
+      - file: "src/pages/membership/board-of-directors.md"
+        label: "Board of Directors Page"
+        name: "boardOfDirectors"
+        fields:
+          - {
+              label: "Template Key",
+              name: "board-of-directors-page",
+              widget: "hidden",
+              default: "board-of-directors-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Subtitle, name: subtitle, widget: string }
+          - {
+              label: "Board of Directors",
+              name: "board of directors",
+              widget: "list",
+              fields:
+                [
+                  { label: FirstName, name: first-name, widget: string },
+                  { label: LastName, name: last-name, widget: string },
+                  {
+                    label: position,
+                    name: position,
+                    widget: string,
+                    required: true,
+                  },
+                  {
+                    label: description,
+                    name: description,
+                    widget: string,
+                    required: false,
+                  },
+                  { label: Image, name: image, widget: image, required: false },
                 ],
             }
       - file: "src/pages/products/index.md"
