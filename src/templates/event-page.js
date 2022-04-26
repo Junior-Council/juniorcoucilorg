@@ -43,8 +43,6 @@ export const EventPageTemplate = ({
 };
 
 const EventPage = ({ data }) => {
-  console.log("dta: ", data);
-
   return (
     <Main>
       <EventPageTemplate

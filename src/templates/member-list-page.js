@@ -5,35 +5,49 @@ import Avatar from "@mui/material/Avatar";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItem from "@mui/material/ListItem";
+import Grid from "@mui/material/Grid";
+import { graphql } from "gatsby";
 
-export function MemberListTemplate() {
+export function MemberListTemplate({ members }) {
   return (
     <section>
       <div class="container">
-        <div class="is-primary">
+        <div class="container is-primary">
           <Typography variant="h1">Members</Typography>
+          <div class="is-primary is-mobile" style={{ marginTop: "60px" }}>
+            <div>
+              <Grid
+                container
+                spacing={{ xs: 2, md: 3 }}
+                columns={{ xs: 4, sm: 8, md: 12 }}
+              >
+                {members.map((member, index) => {
+                  return (
+                    <Grid item xs={2} sm={4} md={4} key={index}>
+                      <MemberRow member={member} />
+                    </Grid>
+                  );
+                })}
+              </Grid>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-const MembershipListPage = ({}) => {
+const MemberRow = ({ member }) => {
   return (
-    <Main>
-      <MemberListTemplate />
-    </Main>
-  );
-};
-
-const MemberRow = ({ name, image }) => {
-  return (
-    <ListItem alignItems="flex-start">
+    <ListItem alignItems="center">
       <ListItemAvatar>
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        <Avatar
+          alt={`${member.first_name} ${member.last_name}`}
+          src={member.image}
+        />
       </ListItemAvatar>
       <ListItemText
-        primary="Full Name"
+        primary={`${member.first_name} ${member.last_name}`}
         secondary={
           <React.Fragment>
             <Typography
@@ -42,7 +56,7 @@ const MemberRow = ({ name, image }) => {
               variant="body2"
               color="text.primary"
             >
-              Ali Connors
+              {member.position}
             </Typography>
           </React.Fragment>
         }
@@ -50,5 +64,27 @@ const MemberRow = ({ name, image }) => {
     </ListItem>
   );
 };
+const MembershipListPage = ({ data }) => {
+  return (
+    <Main>
+      <MemberListTemplate members={data.markdownRemark.frontmatter.members} />
+    </Main>
+  );
+};
 
 export default MembershipListPage;
+
+export const membersQuery = graphql`
+  {
+    markdownRemark(frontmatter: { templateKey: { eq: "member-list-page" } }) {
+      frontmatter {
+        members {
+          first_name
+          last_name
+          image
+          position
+        }
+      }
+    }
+  }
+`;

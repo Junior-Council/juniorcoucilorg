@@ -78,7 +78,7 @@ const Footer = () => {
                 color="primary"
                 component="a"
                 target="blank"
-                href="https://mui.com/store/items/the-front-landing-page/"
+                href="/contact"
                 size="small"
               >
                 Contact
