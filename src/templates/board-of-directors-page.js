@@ -1,6 +1,7 @@
 import React from "react";
 import Main from "../layouts/Main";
 import { Typography } from "@mui/material";
+import { graphql } from "gatsby";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
