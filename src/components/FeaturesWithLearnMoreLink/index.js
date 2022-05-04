@@ -1,1 +1,1 @@
-export { default } from './FeaturesWithLearnMoreLink';
+export { default } from './LearnMoreLinksComponent';
