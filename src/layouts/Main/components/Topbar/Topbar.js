@@ -9,6 +9,9 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
+import SvgIcon from '@mui/material/SvgIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { ReactComponent as MeetupIcon } from '../../../../img/social/meetup.svg'
 
 import { NavItem } from "./components";
 
@@ -96,6 +99,9 @@ const Topbar = ({ onSidebarOpen, pages, colorInvert = false }) => {
           </IconButton>
           <IconButton href={"https://www.instagram.com/junior_council/?hl=en"}>
             <InstagramIcon />
+          </IconButton>
+          <IconButton>
+            <FontAwesomeIcon icon="fa fa-meetup" />
           </IconButton>
         </Box>
       </Box>
